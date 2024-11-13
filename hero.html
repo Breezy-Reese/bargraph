@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Bar Graph</title>
+    <!-- Include ApexCharts CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+
+<h2>Student Marks Bar Graph</h2>
+<div id="chart"></div>
+
+<script>
+    // Define the data for student marks
+    const options = {
+        chart: {
+            type: 'bar',
+            height: 400
+        },
+        series: [{
+            name: 'Marks',
+            data: [85, 78, 92, 66, 76, 88] // Marks for each student
+        }],
+        xaxis: {
+            categories: ['Kimani', 'Carson', 'Basil', 'jones', 'wimo', 'Parto'] // Student names or labels
+        },
+        title: {
+            text: 'Student Marks',
+            align: 'center'
+        },
+        colors: ['#1E90FF']
+    };
+
+    // Render the chart
+    const chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+</script>
+
+</body>
+</html>
